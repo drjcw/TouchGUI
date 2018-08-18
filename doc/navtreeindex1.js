@@ -1,0 +1,25 @@
+var NAVTREEINDEX1 =
+{
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_unit_vector2d.html#a3eed9d8e354dd7790d1aed825d68a145":[0,0,0,0,1,20,5],
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_unit_vector2d.html#a5f0ca9ab049498dfb735837a4695f8aa":[0,0,0,0,1,20,4],
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_unit_vector2d.html#a5f9d799b527522f059b8d339151f5d99":[0,0,0,0,1,20,0],
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_unit_vector2d.html#a89c8bad7ab8993a02a920a77c4d00b2c":[0,0,0,0,1,20,3],
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_unit_vector2d.html#a9296db6096548f7e80efe387c2ff99a0":[0,0,0,0,1,20,1],
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_xml.html":[0,0,0,0,1,21],
+"class_quick_v_r_1_1_core_1_1_touch_g_u_i_1_1_xml.html#a4e757a45e8c1cfe00cc7ed19e06817f7":[0,0,0,0,1,21,0],
+"classes.html":[0,1],
+"functions.html":[0,3,0],
+"functions_enum.html":[0,3,3],
+"functions_func.html":[0,3,1],
+"functions_prop.html":[0,3,4],
+"functions_vars.html":[0,3,2],
+"hierarchy.html":[0,2],
+"index.html":[],
+"interface_quick_v_r_1_1_core_1_1_events_1_1_event_dispatcher_collection_1_1_i_dispatcher.html":[0,0,0,0,0,2,0],
+"interface_quick_v_r_1_1_core_1_1_events_1_1_event_dispatcher_collection_1_1_i_dispatcher.html#af276e368227e611bb00099eb8425858a":[0,0,0,0,0,2,0,0],
+"namespace_quick_v_r.html":[0,0,0],
+"namespace_quick_v_r_1_1_core.html":[0,0,0,0],
+"namespace_quick_v_r_1_1_core_1_1_events.html":[0,0,0,0,0],
+"namespace_quick_v_r_1_1_core_1_1_touch_g_u_i.html":[0,0,0,0,1],
+"pages.html":[]
+};

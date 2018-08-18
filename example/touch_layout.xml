@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<!-- GUI layout with 1080p virtual resolution, top and center alignment -->
+<layout id="appGUI" width="1080" height="1920" alignH="center" alignV="top">
+	
+	<!-- ===========================================================================================================- -->
+	
+	<stylesheet>
+	
+		<!-- Default style for all elements-->
+		<style fontFace="GUI_FONT/Roboto-Regular" />
+		
+		<!-- Specific element styles -->
+		<style name="lightGray" colour="rgb(178,180,182)"/>
+		<style name="halfGray" colour="rgba(128,128,128,255)"/>
+		<style name="loginLabel" fontSize="40"/>
+		<style name="loginInput" alignH="center" width="980" height="100" maxLength="20"/>
+		<style name="inputText" fontSize="50" colour="rgb(0,0,0)" unfocusColour="rgb(192,192,192)"/>
+		<style name="inputBckg" unfocusColour="rgba(128,128,128,255)" colour="rgb(49,118,187)" src="GUI_PNG/login_name-01"/>
+		<style name="mainList" y="5%" width="80%" height="90%" alignH="center"/>
+		<style name="navButton" width="400" height="100" fontSize="45" colour="rgb(0,0,0)" x="0" y="100" alignH="center" alignV="bottom"/>
+		<style name="navButtonBckg" src="GUI_PNG/login-button" colour="rgb(204, 204, 204)"/>
+		<style name="hamburger" src="GUI_PNG/hamburger-01" x="50" y="50" width="200" alignH="right"/>
+		<style name="pageHeading" fontSize="70" colour="rgb(64,64,64)"/>
+		<style name="worldList" y="400" height="1220" width="80%" alignH="center"/>
+			
+	</stylesheet>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- Default message box style -->
+	<messagebox width="80%" y="20%">
+		
+		<title fontSize="70" paddingTop="10"/>
+		<body fontSize="50" paddingTop="50"/>
+		<background src="GUI_PNG/msg-bckg"/>
+		
+		<button style="navButton" width="200" y="20" paddingTop="50">
+			
+			<!-- Button text and styling -->
+			<text style="navButton"/>
+			
+			<!-- Background image -->
+			<background style="navButtonBckg"/>
+			
+		</button>
+		
+	</messagebox>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- World loading progress dialog -->
+	<modal id="modalWorldLoadProgress" width="80%" height="300">
+		
+		<img width="100%" height="100%" src="GUI_PNG/msg-bckg"/>
+		
+		<label fontSize="75" y="0" alignH="center">Loading World</label>
+		
+		<label id="worldLoadProgressLabel" fontSize="50" y="120" alignH="center">0%</label>
+		
+		<label id="worldProcessProgressLabel" visible="false" fontSize="50" y="170" alignH="center"/>
+		
+	</modal>
+	
+	<!-- ===========================================================================================================- -->
+
+	<!-- White background for all GUI pages -->
+	<img width="100%" height="100%" colour="rgba(255, 255, 255, 255)"/>
+	
+	<label style="loginLabel" id="status" alignV="bottom" x="10" y="0"></label>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- Hardware unsupported screen page -->
+	<page id="pageHardwareUnsupported">
+		
+		<label style="pageHeading" y="120" alignH="center" textAlign="upperCenter">Hardware unsupported</label>
+		<label style="pageHeading" y="190" alignH="center" textAlign="upperCenter" fontSize="50">Please close the app</label>
+		
+		<img src="GUI_PNG/sadwhite-01" scale="stretchToFill" width="700" alignV="center" alignH="center" colour="rgb(204,204,204)"/>
+	
+	</page>
+	
+	<!-- Splash screen page -->
+	<page id="pageSplash">
+		
+		<!-- Large logo -->
+		<img id="splashLogo" src="GUI_PNG/logo_noText-01" scale="stretchToFill" width="700" alignV="center" alignH="center" colour="rgb(204,204,204)"/>
+	
+	</page>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- Login page -->
+	<page id="pageLogin">
+			
+		<!-- Page header logo -->
+		<img src="GUI_PNG/logo_cool-01" y="120" width="750" alignH="center" colour="rgb(204,204,204)"/>
+	
+		<!-- Page heading text -->
+		<label style="lightGray" y="400" alignH="center" fontSize="60" textAlign="upperCenter">Please Login</label>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Username field label -->
+		<label style="loginLabel lightGray" x="50" y="600">Username</label>
+		
+		<!-- Username field -->
+		<input style="loginInput" id="username" y="675">
+			
+			<!-- Field text and styling -->
+			<text style="inputText"/>
+			
+			<!-- Background image -->
+			<background style="inputBckg"/>
+			
+		</input>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Password field label -->
+		<label style="loginLabel lightGray" x="50" y="825">Password</label>
+		
+		<!-- Password field -->
+		<input style="loginInput" id="password" type="password" y="900">
+			
+			<!-- Field text and styling -->
+			<text style="inputText"/>
+			
+			<!-- Background image -->
+			<background style="inputBckg"/>
+			
+			<!-- Reveal password icon -->
+			<icon src="GUI_PNG/login_password-01-icon" colour="rgb(192,192,192)"/>		
+			
+		</input>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Login button -->
+		<button id="btnLogin" style="navButton" onClick="login_Click" x="0" y="700" alignH="center" alignV="bottom">
+		
+			<!-- Button text and styling -->
+			<text style="navButton">Let's go!</text>
+			
+			<!-- Background image -->
+			<background style="navButtonBckg"/>
+		
+		</button>
+	</page>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- Main page -->
+	<page id="pageMain">
+	
+		<!-- Avatar -->
+		<img style="halfGray" src="GUI_PNG/avatar_goggles-01" x="50" y="50" width="200"/>
+		
+		<!-- Account settings -->
+		<img style="halfGray hamburger"/>
+		
+		<!-- Usage bar green (???) -->
+		<img src="GUI_PNG/bar" y="50" width="50%" height="30" alignH="center" colour="rgb(132,164,109)"/>
+		
+		<!-- Usage bar blue (???) -->
+		<img src="GUI_PNG/bar" y="100" width="50%" height="30" alignH="center" colour="rgb(120,127,164)"/>
+		
+		<!-- Username -->
+		<label style="pageHeading" id="userNameLabel" y="120" alignH="center" textAlign="upperCenter"/>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Channels & subscribers tabs -->
+		<tab width="100%" height="1520" alignV="bottom">
+		
+			<!-- Tab header -->
+			<header height="100" maxW="350">
+			
+				<!-- Tab label styling -->
+				<text fontSize="30" colour="rgb(158,160,163)"/>
+				
+				<!-- Tab header background -->
+				<background src="GUI_PNG/tab-header-bckg"/>
+
+				<!-- Active tab background -->
+				<active src="GUI_PNG/active-tab"/>
+
+				<!-- Inactive tab background -->
+				<inactive src="GUI_PNG/inactive-tab"/>
+			
+			</header>
+			
+			<!-- ===========================================================================================================- -->
+			
+			<!-- Tab body -->
+			<body>
+			
+				<!-- Channels tab -->
+				<page id="tabChannels" title="My Channels">
+				
+					<!-- Channel list -->
+					<list id="user_chans" style="mainList" onClick="userChannel_Click">
+					
+						<!-- List item styling -->
+						<text style="lightGray" fontSize="60" disabledColour="rgb(255,0,0)"/>
+						
+						<!-- List item bullet -->
+						<icon style="lightGray" src="GUI_PNG/list-icon"/>		
+											
+					</list>
+										
+				</page>
+				
+				<!-- ===========================================================================================================- -->
+				
+				<!-- Subscribers tab -->
+				<page id="tabSubscribed" title="Subscribed">
+				
+					<!-- Subscribers list -->
+					<list id="sub_chans" style="mainList" onClick="subscriberChannel_Click">
+						
+						<!-- List item styling -->
+						<text style="lightGray" fontSize="60"/>
+						
+						<!-- List item bullet -->
+						<icon style="lightGray" src="GUI_PNG/list-icon"/>					
+						
+					</list>
+				
+				</page>
+				
+			</body>
+		
+		</tab>
+			
+	</page>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- User channel page -->
+	<page id="pageUserChannel" onFocus="userChannel_Load">
+	
+		<!-- Channel name -->
+		<label style="pageHeading" id="channelNameLabel" x="50" y="50">Chan: Blah</label>
+	
+		<!-- Account settings -->
+		<img style="halfGray hamburger"/>
+		
+		<!-- Subscribers list -->
+		<list id="user_world_list" style="worldList" onClick="world_Click">
+			
+			<!-- List item styling -->
+			<text style="lightGray" fontSize="60"/>
+			
+			<!-- List item bullet -->
+			<icon style="lightGray" src="GUI_PNG/list-icon"/>					
+			
+		</list>
+		
+		<!-- Back button -->
+		<button id="userChannelBack" style="navButton" onClick="userChannelBack_Click">
+			
+			<!-- Button text and styling -->
+			<text style="navButton">Back</text>
+			
+			<!-- Background image -->
+			<background style="navButtonBckg"/>
+			
+		</button>
+	
+	</page>
+	
+	<!-- ===========================================================================================================- -->
+	
+	<!-- Share page -->
+	<page id="pageShare">
+		
+		<!-- Channel name -->
+		<label x="50" y="50" fontSize="70" colour="rgb(64,64,64)">Chan: Blah</label>
+		
+		<!-- Account settings -->
+		<img src="GUI_PNG/hamburger-01" x="50" y="50" width="200" alignH="right" colour="rgb(128,128,128)"/>
+		
+		<!-- Horizontal divider -->
+		<img src="GUI_PNG/hbar" x="50" y="300" width="980" height="2" colour="rgb(230,230,230)"/>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Sharing instructions text -->
+		<label y="400" alignH="center" width="775" height="250" textAlign="upperCenter" wordWrap="true" fontSize="55" colour="rgb(158,161,163)">Share the info below to let others join your channel.</label>
+		
+		<!-- Sharing instructions border -->
+		<img src="GUI_PNG/share-box-bckg" y="650" alignH="center" width="775" height="250" colour="rgb(193,195,196)"/>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Channel sharing details -->
+		<label y="650" alignH="center" width="775" height="250" textAlign="middleCenter" wordWrap="true" fontSize="65" colour="rgb(158,161,163)">Channel ID: 4578
+Password: 7377</label>
+
+		<!-- ===========================================================================================================- -->
+
+		<!-- Share icon -->
+		<img src="GUI_PNG/share-icon" y="525" width="125" alignH="center" alignV="bottom" colour="rgb(116,116,116)"/>
+		
+		<!-- ===========================================================================================================- -->
+		
+		<!-- Back button -->
+		<button style="navButton">
+			
+			<!-- Button text and styling -->
+			<text style="navButton">Back</text>
+			
+			<!-- Background image -->
+			<background style="navButtonBckg"/>
+			
+		</button>
+						
+	</page>
+	
+</layout>
